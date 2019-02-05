@@ -11,4 +11,4 @@ The game is called „The Key of Gaerth” and it is a simply roguelike game. Th
 5. Hero statistics
 6. Information box
 
-After pressing '?' key help window will pop up. To compile it just type 'make'.
+After pressing `?` key help window will pop up. To compile it just type `make`.
