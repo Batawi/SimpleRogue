@@ -29,4 +29,5 @@ void heroDmgDefSimulator();
 void displayExpTable();
 
 void gameMenu();
+char getch();
 #endif // __FUNCTIONS_H_

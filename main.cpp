@@ -14,6 +14,11 @@ int main()
  * system(cls)
  * getch(), mozliwe ze bedzie mozna zastapic cin>>get()
  * /
+ * 
+ *
+ * changes:
+ * system("cls") to std::system("clear")
+ * change in void setCursor();
 
 /*
 

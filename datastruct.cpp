@@ -267,7 +267,7 @@ void LevelsStack::displayRoomContent(int roomNumber, int heroCoorX, int heroCoor
             {
                 setCursor(startingPointX, startingPointY+mRoomcontent[roomNumber-1].mSelectedContent+1);
             }
-                cout<<(char)175;  
+                cout<<">";  
         }
 
         setCursor(startingPointX+2, startingPointY);
@@ -416,7 +416,7 @@ void Hero::displayHeroItems(vector<Items> itemsBase)
         {
             setCursor(startingPointX, startingPointY+mSelectedItem+1);
         }
-        cout<<(char)175;
+        cout<<">";
     }
 
     setCursor(startingPointX+2, startingPointY);
@@ -446,7 +446,7 @@ void Hero::displayStats(vector<Items> itemsBase)
     short int startingPointY = 1;
 
     setCursor(startingPointX, startingPointY);
-    cout<<(char)196<<(char)196<<" Hero "<<(char)196<<(char)196;
+    cout<<"-"<<"-"<<" Hero "<<"-"<<"-";
 
     setCursor(startingPointX, startingPointY+2);
     cout<<"LVL: "<<mLVL;
@@ -693,7 +693,8 @@ bool Hero::fight(LevelsStack* levelsStack, vector<Items> itemsBase, vector<Monst
             }
             else
             {
-                Sleep(20);
+                usleep(20);
+                //Sleep(20);
             }
         }
 

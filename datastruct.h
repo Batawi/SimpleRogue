@@ -5,14 +5,18 @@
 #include <vector>
 #include <stdlib.h> // srand, rand
 #include <time.h> // time as seed
-#include <windows.h>
-#include <conio.h>
+//#include <windows.h>
+//#include <conio.h>
 #include <math.h>
 #include <sstream>
 
 #include <stdio.h>
 #include <cstdio>
 
+#include <unistd.h>
+#include <termios.h>
+
+#include <unistd.h>
 
 using namespace std;
 

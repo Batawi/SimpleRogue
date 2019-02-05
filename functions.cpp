@@ -24,7 +24,7 @@ void gameLoop()
 		Hero hero("Batawi");
 		hero.setInitCoor(levelsStackHead->mArraymap, 0);
 
-		system("cls");
+		std::system("clear");
 		while(endOfGame==0)
 		{
 			bordersDrawing();
@@ -38,12 +38,11 @@ void gameLoop()
 			hero.displayStats(itemsBase);
 
 			endOfGame = actions(hero, &levelsStackHead, itemsBase, monstersBase);
-			system("cls");
+			std::system("clear");
 		}
 
 
-
-	    getch();
+        std::cin.get();
 }
 
 bool actions(Hero &hero, LevelsStack** levelsStack, vector<Items> itemsBase, vector<Monsters> monstersBase)
@@ -260,7 +259,7 @@ bool actions(Hero &hero, LevelsStack** levelsStack, vector<Items> itemsBase, vec
 	}
 
 	// ----- EXP TABLE -----
-	else if(in=='M')
+	else if(in=='m')
 	{
 		displayExpTable();
 	}
@@ -292,74 +291,74 @@ void bordersDrawing()
 	// --- LINES ---
 	//	--- corners ---
 	setCursor(0, 0);
-	std::cout<<(char)201;
+	std::cout<<"|";
 	setCursor(79, 0);
-	std::cout<<(char)187;
+	std::cout<<"|";
 	setCursor(0, 24);
-	std::cout<<(char)200;
+	std::cout<<"|";
 	setCursor(79, 24);
-	std::cout<<(char)188;
+	std::cout<<"|";
 
 	// --- main border ---
 	for(int i=1; i<79; i++)
 	{
 		setCursor(i, 0);
-		cout<<(char)205;
+		cout<<"=";
 		setCursor(i, 20);
-		cout<<(char)205;
+		cout<<"=";
 		setCursor(i, 24);
-		cout<<(char)205;
+		cout<<"=";
 	}
 	for(int i=1; i<24; i++)
 	{
 		setCursor(0, i);
-		cout<<(char)186;
+		cout<<"|";
 		setCursor(79, i);
-		cout<<(char)186;
+		cout<<"|";
 	}
 
 	// --- triples --- 
 	setCursor(0, 20);
-	std::cout<<(char)204;
+	std::cout<<"|";
 	setCursor(79, 20);
-	std::cout<<(char)185;
+	std::cout<<"|";
 
 
 	setCursor(25, 0);
-	std::cout<<(char)203;
+	std::cout<<"=";
 	setCursor(41, 0);
-	std::cout<<(char)203;
+	std::cout<<"=";
 	setCursor(66, 0);
-	std::cout<<(char)203;
+	std::cout<<"=";
 
 	setCursor(25, 20);
-	std::cout<<(char)202;
+	std::cout<<"=";
 	setCursor(41, 20);
-	std::cout<<(char)202;
+	std::cout<<"=";
 	setCursor(66, 20);
-	std::cout<<(char)202;
+	std::cout<<"=";
 
 	// --- another vertical lines ---
 	for(int i=1; i<20; i++)
 	{
 		setCursor(25, i);
-		cout<<(char)186;
+		cout<<"|";
 		setCursor(41, i);
-		cout<<(char)186;
+		cout<<"|";
 		setCursor(66, i);
-		cout<<(char)186;
+		cout<<"|";
 	}
 
 	for(int i=26; i<41; i++)
 	{
 		setCursor(i, 16);
-		cout<<(char)205;
+		cout<<"=";
 	}
 
 	setCursor(25, 16);
-	std::cout<<(char)204;
+	std::cout<<"|";
 	setCursor(41, 16);
-	std::cout<<(char)185;
+	std::cout<<"|";
 }
 
 void mapDrawing(Hero hero, LevelsStack levelsStack)
@@ -384,41 +383,41 @@ void mapDrawing(Hero hero, LevelsStack levelsStack)
 			{
 				// Corners
 				setCursor(j*3+startingPointX, i*3+startingPointY);
-				cout<<(char)218;
+				cout<<"/";
 				setCursor(j*3+2+startingPointX, i*3+startingPointY);
-				cout<<(char)191;
+				cout<<"\\";
 				setCursor(j*3+startingPointX, i*3+2+startingPointY);
-				cout<<(char)192;
+				cout<<"\\";
 				setCursor(j*3+2+startingPointX, i*3+2+startingPointY);
-				cout<<(char)217;
+				cout<<"/";
 				// Walls
 				setCursor(j*3+1+startingPointX, i*3+startingPointY);
 				if(k-1>=0 && levelsStack.mArraymap[k-1][m]!=NOTHING && levelsStack.mArraymap[k-1][m]!=HIDDEN) // up check
 				{
-					cout<<(char)193;
+					cout<<".";
 				}
-				else cout<<(char)196;
+				else cout<<"-";
 
 				setCursor(j*3+1+startingPointX, i*3+2+startingPointY);
 				if(k+1<=MAP_SIZE-1 && levelsStack.mArraymap[k+1][m]!=NOTHING && levelsStack.mArraymap[k+1][m]!=HIDDEN) // down check
 				{
-					cout<<(char)194;
+					cout<<".";
 				}
-				else cout<<(char)196;
+				else cout<<"-";
 
 				setCursor(j*3+startingPointX, i*3+1+startingPointY);
 				if(m-1>=0 && levelsStack.mArraymap[k][m-1]!=NOTHING && levelsStack.mArraymap[k][m-1]!=HIDDEN) // left check
 				{
-					cout<<(char)180;
+					cout<<".";
 				}
-				else cout<<(char)179;
+				else cout<<"|";
 
 				setCursor(j*3+2+startingPointX, i*3+1+startingPointY);
 				if(m+1<=MAP_SIZE-1 && levelsStack.mArraymap[k][m+1]!=NOTHING && levelsStack.mArraymap[k][m+1]!=HIDDEN) // right check
 				{
-					cout<<(char)195;
+					cout<<".";
 				}
-				else cout<<(char)179;
+				else cout<<"|";
 				// Letter
 				setCursor(j*3+startingPointX+1, i*3+startingPointY+1);
 				if(levelsStack.mArraymap[k][m]==UPSTAIRS)cout<<"U";
@@ -453,7 +452,7 @@ void listAllLevelContent(LevelsStack* levelsStackHead, vector<Items> itemsBase, 
 	setCursor(0, 15);
 	for(int j=0; j<levelsStackHead->mnRooms; j++)
 	{
-		cout<<endl<<"---------------";
+		//cout<<endl<<"---------------";
 		cout<<endl<<j+1<<" ITEMY ";
 		for(unsigned int i=0; i<levelsStackHead->mRoomcontent[j].mItems.size(); i++)
 		{
@@ -470,8 +469,10 @@ void listAllLevelContent(LevelsStack* levelsStackHead, vector<Items> itemsBase, 
 
 void setCursor(short int x, short int y)
 {
-    COORD p = { x, y };
-    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), p );
+    //COORD p = { x, y };
+    //SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), p );
+
+    std::cout << "\033[" << y+1 << ";" << x+1 << "H";
 }
 
 int diceRoller(int repetitions)
@@ -570,7 +571,7 @@ void eatOrEq(Hero &hero, vector<Items> itemsBase)
 				vector<string> s;
 				s.push_back("You are full!");
 				displayInfoBox(s);
-				getch();
+                std::cin.get();
 			}
 
 			if(hero.mSelectedItem >= 
@@ -589,7 +590,7 @@ void stop(int nError)
 {
     setCursor(20, 15);
     std::cout<<"Program has been stopped with: "<<nError;
-    getch();
+    std::cin.get();
     exit(0);
 }
 
@@ -597,30 +598,30 @@ void drawLabel(string s)
 {
 	for(int i=0; i<5; i++)
 	{
-		cout<<(char)196;
+		cout<<"-";
 	}
 	cout<<" "<<s<<" ";
 	for(int i=0; i<5; i++)
 	{
-		cout<<(char)196;
+		cout<<"-";
 	}
 }
 
 void youLose()
 {
-	system("cls");
+	std::system("clear");
 	setCursor(37, 12);
 	cout<<"You lose";
-	getch();
+    std::cin.get();
 	exit(0);
 }
 
 void youWin()
 {
-	system("cls");
+	std::system("clear");
 	setCursor(37, 12);
 	cout<<"You Win";
-	getch();
+    std::cin.get();
 	exit(0);
 }
 
@@ -661,7 +662,7 @@ void displayInfoBox(vector<string> info)
 
 void displayHelp()
 {
-	system("cls");
+	std::system("clear");
 
 	cout<<"HELP\n"
 		<<"\n? - help window\n"
@@ -681,7 +682,7 @@ void displayHelp()
 		<<"\nTo leave current room all monsters inside must be defeated first.\n";
 
 
-	getch();
+    std::cin.get();
 }
 
 bool checkWin(Hero hero, int lvlNumber, vector<Items> itemsBase)
@@ -739,13 +740,13 @@ void heroDmgDefSimulator()
     	cout<<j<<". DMG: "<<minDMG<<" - "<<maxDMG
     		<<", DEF: "<<minDEF<<" - "<<maxDEF<<endl;
     }
-    getch();
+    std::cin.get();
     stop(0);
 }
 
 void displayExpTable()
 {
-	system("cls");
+	std::system("clear");
 
 	int total_exp = 0;
 
@@ -773,15 +774,61 @@ void displayExpTable()
 		cout<<(int)(20*pow((i - 1), 1.5));
 	}
 
-	getch();
+    std::cin.get();
 }
 
 void gameMenu()
 {
+    std::system("clear");
 	setCursor(31, 6);
-	cout<<"The Key of Gaerth!";
+    std::cout<<"The Key of Gaerth!";
 	setCursor(31, 12);
-	cout<<"Press any key ...";
+    std::cout<<"Press any key ...";
 
-	getch();
+    getch();
+}
+
+char getch() 
+{
+    /*char buf = 0;
+    struct termios old = {0};
+    if(tcgetattr(0, &old) < 0)
+    {
+        perror("tcsetattr()");
+    }
+
+    old.c_lflag &= ~ICANON;
+    old.c_lflag &= ~ECHO;
+    old.c_cc[VMIN] = 1;
+    old.c_cc[VTIME] = 0;
+
+    if(tcsetattr(0, TCSANOW, &old) < 0)
+    {
+        perror("tcsetattr ICANON");
+    }
+
+    if(read(0, &buf, 1) < 0)
+    {
+        perror ("read()");
+    }
+    
+    old.c_lflag |= ICANON;
+    old.c_lflag |= ECHO;
+
+    if(tcsetattr(0, TCSADRAIN, &old) < 0)
+    {
+        perror ("tcsetattr ~ICANON");
+    }
+
+    return(buf);*/
+
+    struct termios oldattr, newattr;
+    int ch;
+    tcgetattr( STDIN_FILENO, &oldattr );
+    newattr = oldattr;
+    newattr.c_lflag &= ~( ICANON | ECHO );
+    tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
+    ch = getchar();
+    tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
+    return ch;
 }
