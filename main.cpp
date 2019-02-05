@@ -9,6 +9,11 @@ int main()
 	
     return 0;
 }
+/*
+ * setCursor
+ * system(cls)
+ * getch(), mozliwe ze bedzie mozna zastapic cin>>get()
+ * /
 
 /*
 
