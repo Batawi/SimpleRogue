@@ -2,7 +2,7 @@
 The game is called „The Key of Gaerth” and it is a simple roguelike game. The goal of this game is to move through the levels of dungeon, find the key and go back to the surface. Player will encounter items and monsters. By defeating monsters player will gain experience points which will make him better at fights. Equipping items (swords, shields etc.) will give the same result. Instead of going back to the surface after obtaining the key player can go as deep as he wishes and explore. All content of this game is randomly generated.
 
 
-![screen_from_game](https://github.com/Batawi/SimpleRogue/blob/master/game_screen.png)
+![screen_from_game](https://github.com/Batawi/SimpleRogue/blob/master/screen_from_game.png)
 
 1. Content of the room
 2. Map of the dungeon
